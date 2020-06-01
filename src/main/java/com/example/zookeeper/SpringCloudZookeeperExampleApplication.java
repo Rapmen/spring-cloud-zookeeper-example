@@ -9,13 +9,12 @@ import org.springframework.web.client.RestTemplate;
 import com.netflix.loadbalancer.IRule;
 import com.netflix.loadbalancer.RandomRule;
 
-//@EnableDiscoveryClient
 @SpringBootApplication
 public class SpringCloudZookeeperExampleApplication {
 
     @Bean
     @LoadBalanced
-    RestTemplate restTemplate() {
+    RestTemplate loadBalancedRestTemplate() {
         return new RestTemplate();
     }
 
