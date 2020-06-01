@@ -22,6 +22,9 @@ public class SampleController {
     @Value("${spring.application.name:testZookeeperApp}")
     private String appName;
 
+    @Value("${server.port}")
+    String port;
+
     @Autowired
     private LoadBalancerClient loadBalancer;
 
@@ -54,7 +57,7 @@ public class SampleController {
 
     @RequestMapping("/hi")
     public String hi() {
-        return "Hello World! from " + this.registration;
+        return "Hello World! from " + this.registration + " / Port: " + port;
     }
 
     @RequestMapping("/self")
